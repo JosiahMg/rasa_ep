@@ -1,0 +1,50 @@
+version: "3.0"
+
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Tell the date
+  steps:
+  - intent: inquire_date
+  - action: action_tell_date
+
+- rule: Tell the date different
+  steps:
+  - intent: date_different
+  - action: action_date_different
+
+- rule: Tell the time
+  steps:
+  - intent: inquire_time
+  - action: action_tell_time
+
+- rule: Tell the time different
+  steps:
+  - intent: time_different
+  - action: action_time_different
+
+# 激活form表单
+- rule: Activate Weather Form
+  steps:
+  - intent: inquire_weather
+  - action: inquire_weather_form
+  - active_loop: inquire_weather_form
+
+# 提交form表单
+- rule: Submit Weather Form
+  condition:
+  - active_loop: inquire_weather_form
+  steps:
+  - action: inquire_weather_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_tell_weather

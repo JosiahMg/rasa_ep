@@ -1,0 +1,58 @@
+version: "3.0"
+
+intents:
+  - greet
+  - goodbye
+  - inquire_date
+  - inquire_time
+  - bot_challenge
+  - date_different
+  - time_different
+  - inquire_weather
+  - inform_place
+
+entities:
+  - alien_date
+  - alien_time
+  - time
+  - place
+
+actions:
+  - action_tell_date
+  - action_tell_time
+  - action_date_different
+  - action_time_different
+  - action_tell_weather
+
+slots:
+  place:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: place
+
+forms:
+  inquire_weather_form:
+    required_slots:
+      - place
+
+responses:
+  utter_greet:
+  - text: "嗨，你好啊!"
+
+  utter_goodbye:
+  - text: "再见"
+
+  utter_iamabot:
+  - text: "我是机器人"
+
+  utter_un_come_true:
+  - text: "目前无法解答您的问题，我要抓紧去学习了"
+
+  utter_ask_place:
+  - text: "请问是哪个地方？"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

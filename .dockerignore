@@ -1,0 +1,7 @@
+.rasa
+data/*
+tests/*
+config.yml
+domain.yml
+endpoints.yml
+story_graph.dot
