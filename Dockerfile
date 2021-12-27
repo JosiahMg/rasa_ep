@@ -15,12 +15,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN rasa train
 
 # set the user to run, don't run as root
-USER 1001
+# USER 1001
 
 # set entrypoint for interactive shells
 ENTRYPOINT ["rasa"]
 
 CMD ["run", "-m", "/app/models", "--enable-api", "--cors", "*"]
-
 # build : docker build -t mh/rasa3-1.0 .
 # run: docker run -it -p 8080:8080 mh/rasa3-1.0
