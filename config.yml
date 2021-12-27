@@ -20,7 +20,7 @@ pipeline:
     max_ngram: 4
   - name: "DucklingEntityExtractor"
     # "docker run -p 8000:8000 rasa/duckling"   to run server
-    url: "http://81.68.107.188:8000"
+    url: "http://duckling:8000"  # docker-compose container_name is "duckling"
     dimensions: ["time"]
     # dimensions: ["time", "number", "amount-of-money", "distance"]
     locale: "zh_ZH"

@@ -3,14 +3,16 @@ FROM python:3.8
 # 设置国内pip镜像源
 COPY pip.conf /root/.pip/pip.conf
 
-# 安装依赖
-RUN python -m pip install --upgrade pip==21.3.1
-RUN pip install -r requirements.txt
+
 
 WORKDIR /app
 COPY . .
 COPY ./models /app/models
 
+# 安装依赖
+RUN python -m pip install --upgrade pip==21.3.1
+RUN pip install --no-cache-dir -r requirements.txt
+RUN rasa train
 
 # set the user to run, don't run as root
 USER 1001
