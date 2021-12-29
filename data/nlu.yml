@@ -17,31 +17,38 @@ nlu:
     - 886
     - 88
 
-- intent: bot_challenge
+- intent: helpful_tip
   examples: |
     - 你是机器人吗?
     - 你是人还是机器人?
     - 你是人类吗?
     - 你不是人类?
+    - 帮助
+    - 我该问你什么问题
+    - 你会什么
+    - 你懂啥？
+    - 给点提示
+    - 你是干什么的
+    - 你有啥用
 
 - intent: inquire_date
   examples: |
-    - [大前天](alien_date)周几
-    - 前天几号
-    - 昨天几号
-    - 今天几号
-    - 明天几号
-    - 后天几号
+    - [大前天](relative_date)周几
+    - [前天](relative_date)几号
+    - [昨天](relative_date)几号
+    - [今天](relative_date)几号
+    - [明天](relative_date)几号
+    - [后天](relative_date)几号
     - 十天号几号
     - 7天后几号
     - 三天前几号
-    - [大后天](alien_date)星期几哪
-    - 今天的日期是多少
-    - 今天星期几
+    - [大后天](relative_date)星期几哪
+    - [今天](relative_date)的日期是多少
+    - [今天](relative_date)星期几
     - 12月20日星期几?
     - 元旦星期几
     - 春节是周几
-    - 明天周几啊
+    - [明天]周几啊
     - 2021年12月30日周几
     - 月末是几号？
     - 月底周几啊
@@ -64,17 +71,17 @@ nlu:
     - 2023年距离今天还有几天
     - 2025年3月1日距离2025年3月8日隔了多少天哪
     - 1987年3月1日距离2025年3月8日有多少天
-    - 今天距离2022年元旦还有几天？
-    - 今天距离[过年]{"entity": "alien_date", "value": "春节"}还有几天？ # TODO
-    - 今天距离[春节]{"entity": "alien_date", "value": "春节"}还有多少天
+    - [今天](relative_date)距离2022年元旦还有几天？
+    - [今天](relative_date)距离[过年]{"entity": "relative_date", "value": "春节"}还有几天？ # TODO
+    - [今天](relative_date)距离[春节]{"entity": "relative_date", "value": "春节"}还有多少天
     - 到春节还有几天哪
 
 - intent: inquire_time
   examples: |
-    - 现在几点了
+    - [现在](relative_time)几点了
     - time
     - 时间？
-    - 现在时间是多少
+    - [现在](relative_time)时间是多少
     - 10分钟之前是几点
     - 10分钟之后是几点
     - 两小时之前是几点   # TODO
@@ -82,16 +89,16 @@ nlu:
     - 再过半小时是几点   # TODO
     - 30分钟之前是几点
     - 60分钟过后是几点  # TODO
-    - [北京]{"entity": "place"}现在是几点钟？
-    - [日本]{"entity": "place"}现在是几点
-    - [纽约]{"entity": "place"}现在是几点?
+    - [北京]{"entity": "place"}[现在](relative_time)是几点钟？
+    - [日本]{"entity": "place"}[现在](relative_time)是几点
+    - [纽约]{"entity": "place"}[现在](relative_time)是几点?
     - [太平洋]{"entity": "place"}时间？
-    - [北京]{"entity": "place"}现在是几点钟
-    - [西雅图]{"entity": "place"}现在是几点
-    - [中国]{"entity": "place"}现在是几点
+    - [北京]{"entity": "place"}[现在](relative_time)是几点钟
+    - [西雅图]{"entity": "place"}[现在](relative_time)是几点
+    - [中国]{"entity": "place"}[现在](relative_time)是几点
     - [哈尔滨]{"entity": "place"}时间多少？
-    - [沈阳]{"entity": "place"}现在的[北京]{"entity": "place"}时间是多少？
-    - [新加坡]{"entity": "place"}现在的时间是多少
+    - [沈阳]{"entity": "place"}[现在](relative_time)的[北京]{"entity": "place"}时间是多少？
+    - [新加坡]{"entity": "place"}[现在](relative_time)的时间是多少
     - [巴黎]{"entity": "place"}几点了
     - [雅典]{"entity": "place"}几点了
   
@@ -118,10 +125,16 @@ nlu:
     - [宁波]{"entity": "place"}的气温多少
     - [淮北]{"entity": "place"}未来三天的天气如何
     - [大连]{"entity": "place"}未来七天的天气怎样
-    - 今天的天气
-    - 今天的气温如何
+    - [今天]{"entity": "relative_date"}[上海]{"entity": "place"}的天气
+    - [昨天]{"entity": "relative_date"}的温度多少
+    - [武汉]{"entity": "place"}[明天]{"entity": "relative_date"}的气温升高吗
+    - [前天]{"entity": "relative_date"}有大风吗
+    - [深圳]{"entity": "place"}[后天]{"entity": "relative_date"}的风大吗
+    - [大后天]{"entity": "relative_date"}风多少级
+    - [今天]{"entity": "relative_date"}[沈阳]{"entity": "place"}的气温如何
     - 天气预报？
-    - 今天冷不冷
+    - [今天]{"entity": "relative_date"}[北京]{"entity": "place"}冷不冷
+    - [北京]{"entity": "place"}[今天]{"entity": "relative_date"}冷不冷
 
 - intent: inform_place
   examples: |

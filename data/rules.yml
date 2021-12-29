@@ -8,8 +8,8 @@ rules:
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: helpful_tip
+  - action: utter_tip
 
 - rule: Tell the date
   steps:
