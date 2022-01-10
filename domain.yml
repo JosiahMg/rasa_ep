@@ -10,6 +10,7 @@ intents:
   - time_different
   - inquire_weather
   - inform_place
+  - calculator
 
 entities:
   - relative_date
@@ -22,6 +23,7 @@ actions:
   - action_date_different
   - action_time_different
   - action_tell_weather
+  - action_calculate
 
 slots:
   place:

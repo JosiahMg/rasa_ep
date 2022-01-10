@@ -48,3 +48,8 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_tell_weather
+
+- rule: Calculate
+  steps:
+  - intent: calculator
+  - action: action_calculate
