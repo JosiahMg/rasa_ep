@@ -7,13 +7,13 @@ COPY pip.conf /root/.pip/pip.conf
 
 WORKDIR /app
 COPY . .
-COPY ./models /app/models
+# COPY ./models /app/models
 
 # 安装依赖
-RUN python -m pip install --upgrade pip==21.3.1
+RUN python3 -m pip install --upgrade pip==21.3.1
 RUN pip install --no-cache-dir -r requirements.txt
-RUN python -m spacy download zh_core_web_sm
-RUN rasa train
+RUN python3 -m spacy download zh_core_web_sm
+# RUN rasa train
 
 # set the user to run, don't run as root
 # USER 1001
