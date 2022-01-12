@@ -1,0 +1,87 @@
+version: "3.0"
+
+nlu:
+- intent: inquire_date
+  examples: |
+    - [大前天](relative_date)周几
+    - [前天](relative_date)几号
+    - [昨天](relative_date)几号
+    - [今天](relative_date)几号
+    - [明天](relative_date)几号
+    - [后天](relative_date)几号
+    - 十天号几号
+    - 7天后几号
+    - 三天前几号
+    - [大后天](relative_date)星期几哪
+    - [今天](relative_date)的日期是多少
+    - [今天](relative_date)星期几
+    - 12月20日星期几?
+    - 元旦星期几
+    - 春节是周几
+    - [明天]周几啊
+    - 2021年12月30日周几
+    - 月末是几号？
+    - 月底周几啊
+    - 月初是几号  # TODO
+    - 月初星期几？  # TODO
+    - 周三是几号?
+    - 这个月的最后一天是周几  # TODO
+    - 下个月的第一天是星期几  # TODO
+    - 日期
+    - 周几？
+    - 几号了？
+    - date
+    - 元旦是几号
+
+- intent: date_different
+  examples: |
+    - 2月3日与5月9号相差几天?
+    - 2021年9月8日与2021年10月3日相差几天？
+    - 2032-12-1和2042-5-2相差多远？
+    - 2023年距离今天还有几天
+    - 2025年3月1日距离2025年3月8日隔了多少天哪
+    - 1987年3月1日距离2025年3月8日有多少天
+    - [今天](relative_date)距离2022年元旦还有几天？
+    - [今天](relative_date)距离[过年]{"entity": "relative_date", "value": "春节"}还有几天？ # TODO
+    - [今天](relative_date)距离[春节]{"entity": "relative_date", "value": "春节"}还有多少天
+    - 到春节还有几天哪
+
+- intent: inquire_time
+  examples: |
+    - [现在](relative_time)几点了
+    - time
+    - 时间？
+    - [现在](relative_time)时间是多少
+    - 10分钟之前是几点
+    - 10分钟之后是几点
+    - 两小时之前是几点   # TODO
+    - 三个半小时之后是几点钟  # TODO
+    - 再过半小时是几点   # TODO
+    - 30分钟之前是几点
+    - 60分钟过后是几点  # TODO
+    - [北京]{"entity": "place"}[现在](relative_time)是几点钟？
+    - [日本]{"entity": "place"}[现在](relative_time)是几点
+    - [纽约]{"entity": "place"}[现在](relative_time)是几点?
+    - [太平洋]{"entity": "place"}时间？
+    - [北京]{"entity": "place"}[现在](relative_time)是几点钟
+    - [西雅图]{"entity": "place"}[现在](relative_time)是几点
+    - [中国]{"entity": "place"}[现在](relative_time)是几点
+    - [哈尔滨]{"entity": "place"}时间多少？
+    - [沈阳]{"entity": "place"}[现在](relative_time)的[北京]{"entity": "place"}时间是多少？
+    - [新加坡]{"entity": "place"}[现在](relative_time)的时间是多少
+    - [巴黎]{"entity": "place"}几点了
+    - [雅典]{"entity": "place"}几点了
+  
+- intent: time_different
+  examples: |
+    - [北京]{"entity": "place"}与[纽约]{"entity": "place"}相差多少小时？
+    - [上海]{"entity": "place"}和[北京]{"entity": "place"}相差几小时
+    - [香港]{"entity": "place"}与[纽约]{"entity": "place"}相差几小时
+    - [曼谷]{"entity": "place"}与[太平洋]{"entity": "place"}时间相差几小时
+    - [北京]{"entity": "place"}比[伦敦]{"entity": "place"}快几个小时
+    - [西雅图]{"entity": "place"}比[北京]{"entity": "place"}慢几个小时
+    - [东京]{"entity": "place"}比[北京]{"entity": "place"}快几个小时
+    - [曼谷]{"entity": "place"}比[平壤]{"entity": "place"}慢多久
+    - [悉尼]{"entity": "place"}和[平壤]{"entity": "place"}的时间差是多少
+    - [新加坡]比[苏黎世]晚还是早?
+

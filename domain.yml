@@ -14,6 +14,7 @@ intents:
 
 entities:
   - relative_date
+  - relative_time
   - time
   - place
 
@@ -48,7 +49,8 @@ responses:
   utter_tip:
   - text: "我是您的机器人助手，你可以询问我有关以下相关问题： \n\
            1. 全球大部分城市的时间，以及两个城市之间的时间差；\n\
-           2. 全国地级市的未来三天的天气查询；"
+           2. 全国地级市的未来三天的天气查询； \n\
+           3. 数学运算；"
 
   utter_un_come_true:
   - text: "目前无法解答您的问题，我要抓紧去学习了"
