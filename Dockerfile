@@ -1,26 +1,16 @@
-FROM python:3.8
+FROM rasa/rasa:3.0.3-full
 
-# 设置国内pip镜像源
-COPY pip.conf /root/.pip/pip.conf
-
-
+USER root
 
 WORKDIR /app
-COPY . .
-# COPY ./models /app/models
+
+COPY . /app
 
 # 安装依赖
-RUN python3 -m pip install --upgrade pip==21.3.1
-RUN pip install --no-cache-dir -r requirements.txt
+# RUN python3 -m pip install --upgrade pip==21.3.1
+RUN pip install --no-cache-dir -r requirements.txt -i https://mirrors.cloud.tencent.com/pypi/simple/
 RUN python3 -m spacy download zh_core_web_sm
-# RUN rasa train
+# RUN pip install zh_core_web_sm-3.2.0-py3-none-any.whl -i https://mirrors.cloud.tencent.com/pypi/simple/
 
-# set the user to run, don't run as root
-# USER 1001
-
-# set entrypoint for interactive shells
 ENTRYPOINT ["rasa"]
-
 CMD ["run", "-m", "/app/models", "--enable-api", "--cors", "*"]
-# build : docker build -t mh/rasa3-1.0 .
-# run: docker run -it -p 8080:8080 mh/rasa3-1.0
