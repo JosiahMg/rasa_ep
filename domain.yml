@@ -25,6 +25,7 @@ actions:
   - action_time_different
   - action_tell_weather
   - action_calculate
+  - action_consult_stock
 
 slots:
   place:

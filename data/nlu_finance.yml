@@ -1,0 +1,10 @@
+version: "3.0"
+
+nlu:
+- intent: consult_stock
+  examples: |
+    - 我想知道[工商银行](company)[现在](relative_date)的股票价格
+    - 能告诉我[现在](relative_date)[宁德时代](company)的股票价格吗
+    - 查看[三天前](relative_date)的[交通银行](company)股票情况
+    - 查看[2天前](relative_date)的[农业银行](company)价格
+    - 查询[谷歌](company)的[当天](relative_date)情况
