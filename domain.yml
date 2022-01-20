@@ -41,23 +41,26 @@ forms:
 
 responses:
   utter_greet:
-  - text: "嗨，你好啊!"
+    - text: "嗨，你好啊!"
 
   utter_goodbye:
-  - text: "再见"
+    - text: "再见"
 
   utter_tip:
-  - text: "我是您的机器人助手，你可以询问我有关以下相关问题： \n\
+    - text: "我是您的机器人助手，你可以询问我有关以下相关问题： \n\
            1. 全球大部分城市的时间，以及两个城市之间的时间差；\n\
            2. 全国地级市的未来三天的天气查询； \n\
            3. 数学运算；"
 
   utter_un_come_true:
-  - text: "目前无法解答您的问题，我要抓紧去学习了"
+    - text: "目前无法解答您的问题，我要抓紧去学习了"
 
   utter_ask_place:
-  - text: "需要您提供位置信息？"
+    - text: "需要您提供位置信息？"
 
+  utter_index_info:
+    - text: "还可以查看如下全球指数情况"
+    
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
