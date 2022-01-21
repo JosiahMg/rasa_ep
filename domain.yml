@@ -11,12 +11,14 @@ intents:
   - inquire_weather
   - inform_place
   - calculator
+  - consult_stock
 
 entities:
   - relative_date
   - relative_time
   - time
   - place
+  - company
 
 actions:
   - action_tell_date
@@ -26,6 +28,7 @@ actions:
   - action_tell_weather
   - action_calculate
   - action_consult_stock
+  - action_fetch_index
 
 slots:
   place:
