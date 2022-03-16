@@ -1,0 +1,13 @@
+version: "3.0"
+
+intents:
+  - world_index
+
+entities:
+  - market_date
+  - market
+
+actions:
+  - action_search_index
+  - action_query_index
+

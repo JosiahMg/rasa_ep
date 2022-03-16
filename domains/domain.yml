@@ -62,8 +62,6 @@ responses:
   utter_ask_place:
     - text: "需要您提供位置信息？"
 
-  utter_index_info:
-    - text: "还可以查看如下全球指数情况"
     
 session_config:
   session_expiration_time: 60

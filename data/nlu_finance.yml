@@ -8,3 +8,11 @@ nlu:
     - 查看[三天前](relative_date)的[交通银行](company)股票情况
     - 查看[2天前](relative_date)的[农业银行](company)价格
     - 查询[谷歌](company)的[当天](relative_date)情况
+
+- intent: world_index
+  examples: |
+    - [今天](market_date)[上证指数](market)指数是多少？
+    - [前2天](market_date)[台湾加权](market)指数是多少？
+    - [昨天](market_date)[标普500](market)指数怎样？
+    - [当前](market_date)[纳斯达克](market)价格是多少？
+    - [现在](market_date)[恒生指数](market)情况怎样？
