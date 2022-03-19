@@ -1,13 +1,15 @@
 version: "3.0"
 
 intents:
-  - world_index
+  - query_stock
+  - query_world_index
 
 entities:
-  - market_date
+  - company
   - market
 
 actions:
-  - action_search_index
-  - action_query_index
+  - action_query_stock
+  - action_query_world_index
+
 

@@ -1,7 +1,7 @@
 version: "3.0"
 
 nlu:
-- intent: consult_stock
+- intent: query_stock
   examples: |
     - 我想知道[工商银行](company)[现在](relative_date)的股票价格
     - 能告诉我[现在](relative_date)[宁德时代](company)的股票价格吗
@@ -9,10 +9,10 @@ nlu:
     - 查看[2天前](relative_date)的[农业银行](company)价格
     - 查询[谷歌](company)的[当天](relative_date)情况
 
-- intent: world_index
+- intent: query_world_index
   examples: |
-    - [今天](market_date)[上证指数](market)指数是多少？
-    - [前2天](market_date)[台湾加权](market)指数是多少？
-    - [昨天](market_date)[标普500](market)指数怎样？
-    - [当前](market_date)[纳斯达克](market)价格是多少？
-    - [现在](market_date)[恒生指数](market)情况怎样？
+    - [今天](relative_date)[上证指数](market)指数是多少？
+    - [前2天](relative_date)[台湾加权](market)指数是多少？
+    - [昨天](relative_date)[标普500](market)指数怎样？
+    - [当前](relative_date)[纳斯达克](market)价格是多少？
+    - [现在](relative_date)[恒生指数](market)情况怎样？
